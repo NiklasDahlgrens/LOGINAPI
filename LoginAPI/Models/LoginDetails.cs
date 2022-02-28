@@ -10,12 +10,14 @@ namespace LoginAPI.Models
     {
         [Key]
         public int LoginId { get; set; }
+        
         public string Username { get; set; }
+        
         public string Password { get; set; }
         public int AccessLevel { get; set; }
-            //FN EmployeeID
-            //FN ArrangörID
-            //FN SponsorID 
+        //FK EmployeeID
+        //FK ArrangörID
+        //FK SponsorID 
 
     }
 }
