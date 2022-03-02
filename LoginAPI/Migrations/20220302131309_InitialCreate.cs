@@ -10,15 +10,16 @@ namespace LoginAPI.Migrations
                 name: "LoginDetails",
                 columns: table => new
                 {
-                    LoginId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Username = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AccessLevel = table.Column<int>(type: "int", nullable: false)
+                    AccessLevel = table.Column<int>(type: "int", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_LoginDetails", x => x.LoginId);
+                    table.PrimaryKey("PK_LoginDetails", x => x.Id);
                 });
         }
 

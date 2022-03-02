@@ -46,7 +46,7 @@ namespace LoginAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutLoginDetails(int id, LoginDetails loginDetails)
         {
-            if (id != loginDetails.LoginId)
+            if (id != loginDetails.Id)
             {
                 return BadRequest();
             }
@@ -80,7 +80,7 @@ namespace LoginAPI.Controllers
             _context.LoginDetails.Add(loginDetails);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetLoginDetails", new { id = loginDetails.LoginId }, loginDetails);
+            return CreatedAtAction("GetLoginDetails", new { id = loginDetails.Id }, loginDetails);
         }
 
         // DELETE: api/LoginDetails/5
@@ -101,7 +101,7 @@ namespace LoginAPI.Controllers
 
         private bool LoginDetailsExists(int id)
         {
-            return _context.LoginDetails.Any(e => e.LoginId == id);
+            return _context.LoginDetails.Any(e => e.Id == id);
         }
     }
 }
